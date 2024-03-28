@@ -3,7 +3,7 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
 import "./MessageComponents.css";
 import { getMessagesById, sendMessage } from "../../services/messages";
 import io from "socket.io-client";
-const socket = io("https://bloom-backend-qi6q.onrender.com", {
+const socket = io("https://bloom-backend-ucxk.onrender.com", {
   withCredentials: true, // only if necessary, for sending cookies with requests
   transports: ['websocket'] // optional, if you want to force Websockets
 });
