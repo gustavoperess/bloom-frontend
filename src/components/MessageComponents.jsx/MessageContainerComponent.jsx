@@ -44,7 +44,6 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   }, [messageManager, token]);
   
   useEffect(() => {
-    console.log('Setting up socket event listeners');
   if (myRoomIdentifier !== prevRoomIdentifier) {
     if (prevRoomIdentifier) {
       socket.emit('leave', { room: prevRoomIdentifier });
@@ -54,7 +53,6 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   }
 
   socket.on('new_messages', (data) => {
-    console.log('Received new message:', data, "HERE IS NOT SHOWING");
     const normalizedData = Array.isArray(data) ? data : [data]; 
     const newMessages = normalizedData.map(msg => 
       typeof msg === 'string' ? JSON.parse(msg) : msg
@@ -70,7 +68,6 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   });
 
   socket.on('joined_room', (data) => {
-    console.log('Joined room:', data.message);
     setRoomInfo(data.message); 
   });
 
@@ -78,7 +75,6 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
      if (myRoomIdentifier) {
     socket.emit('leave', { room: myRoomIdentifier });
   }
-    console.log('Cleaning up socket event listeners');
     socket.off('new_messages');
     socket.off('joined_room');
   };
@@ -90,7 +86,6 @@ useEffect(() => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    console.log('Sending message:', e);
     const newMessageObj = {
       room: myRoomIdentifier,
       sender: userDetails.username,
