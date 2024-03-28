@@ -54,7 +54,7 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   }
 
   socket.on('new_messages', (data) => {
-    console.log('Received new message:', data);
+    console.log('Received new message:', data, "HERE IS NOT SHOWING");
     const normalizedData = Array.isArray(data) ? data : [data]; 
     const newMessages = normalizedData.map(msg => 
       typeof msg === 'string' ? JSON.parse(msg) : msg
@@ -64,6 +64,9 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   
   socket.on('connect_error', (error) => {
     console.error('Connection Error:', error);
+  });
+  socket.on('error', (error) => {
+    console.error('Socket Error:', error);
   });
 
   socket.on('joined_room', (data) => {
