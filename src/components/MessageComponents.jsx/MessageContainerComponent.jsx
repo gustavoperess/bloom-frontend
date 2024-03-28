@@ -87,7 +87,7 @@ useEffect(() => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    console.log('Sending message:', newMessageObj);
+    console.log('Sending message:', e);
     const newMessageObj = {
       room: myRoomIdentifier,
       sender: userDetails.username,
