@@ -26,7 +26,9 @@ export const getAllHelpRequestsWithUserDetailsAndPlant = async () => {
     try {
         const requestOptions = {
             method: "GET",
-            headers: {}
+            headers: {
+                'Accept': 'application/json',
+            }
         };
 
         const response = await fetch(`${BACKEND_URL}/help_requests3`, requestOptions);
@@ -48,7 +50,9 @@ export const getOneHelpRequestById = async (requestId) => {
     try {
         const requestOptions = {
             method: "GET",
-            headers: {}
+            headers: {
+                'Accept': 'application/json',
+            }
         };
 
         const response = await fetch(`${BACKEND_URL}/help_requests/${requestId}`, requestOptions);
