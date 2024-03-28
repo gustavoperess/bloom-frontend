@@ -44,7 +44,7 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   }, [messageManager, token]);
   
   useEffect(() => {
-
+    console.log('Setting up socket event listeners');
   if (myRoomIdentifier !== prevRoomIdentifier) {
     if (prevRoomIdentifier) {
       socket.emit('leave', { room: prevRoomIdentifier });
@@ -54,14 +54,20 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
   }
 
   socket.on('new_messages', (data) => {
+    console.log('Received new message:', data);
     const normalizedData = Array.isArray(data) ? data : [data]; 
     const newMessages = normalizedData.map(msg => 
       typeof msg === 'string' ? JSON.parse(msg) : msg
     );
     setMessages(currentMessages => [...currentMessages, ...newMessages]);
   });
+  
+  socket.on('connect_error', (error) => {
+    console.error('Connection Error:', error);
+  });
 
   socket.on('joined_room', (data) => {
+    console.log('Joined room:', data.message);
     setRoomInfo(data.message); 
   });
 
@@ -69,6 +75,7 @@ function MessageContainer({ messageManager, userDetails, receiverDetails, newRec
      if (myRoomIdentifier) {
     socket.emit('leave', { room: myRoomIdentifier });
   }
+    console.log('Cleaning up socket event listeners');
     socket.off('new_messages');
     socket.off('joined_room');
   };
@@ -80,6 +87,7 @@ useEffect(() => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
+    console.log('Sending message:', newMessageObj);
     const newMessageObj = {
       room: myRoomIdentifier,
       sender: userDetails.username,
@@ -91,6 +99,7 @@ useEffect(() => {
     try {
       await sendMessage(parseInt(user_id), newRecipientId, newUserName, userDetails.username, newMessage, token, myRoomIdentifier);
       socket.emit('message', newMessageObj);
+      console.log('Message send acknowledgment:', response);
       const normalizedMessageM = { sender: userDetails?.username, message: newMessage,};
       setMessages(currentMessages => [...currentMessages, normalizedMessageM]);
       setNewMessage(""); 
