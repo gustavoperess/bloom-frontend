@@ -6,7 +6,7 @@ import './AddPlantsStyle.css';
 import { useNavigate } from "react-router-dom";
 
 function useDebounce(value, delay) {
-    const [debouncedValue, setDebouncedValue] = useState(value);
+    const [debouncedValue, setDebouncedValue] = useState(value); 
 
     useEffect(() => {
         const handler = setTimeout(() => {
