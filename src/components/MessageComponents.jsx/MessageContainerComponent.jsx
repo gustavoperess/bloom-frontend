@@ -99,7 +99,6 @@ useEffect(() => {
     try {
       await sendMessage(parseInt(user_id), newRecipientId, newUserName, userDetails.username, newMessage, token, myRoomIdentifier);
       socket.emit('message', newMessageObj);
-      console.log('Message send acknowledgment:', response);
       const normalizedMessageM = { sender: userDetails?.username, message: newMessage,};
       setMessages(currentMessages => [...currentMessages, normalizedMessageM]);
       setNewMessage(""); 
