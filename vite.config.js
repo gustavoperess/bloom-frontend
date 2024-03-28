@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://bloom-backend-qi6q.onrender.com', // Proxy /api requests to your Flask backend
+      '/api': 'https://bloom-backend-ucxk.onrender.com', // Proxy /api requests to your Flask backend
     },
   }
 });
