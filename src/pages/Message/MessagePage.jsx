@@ -8,7 +8,10 @@ import { getUserInformationById } from "../../services/users";
 import NavbarComponent from "../../components/Navbar/NavbarComponent";
 import { getAllMessagesByUserId } from "../../services/messages";
 import io from "socket.io-client";
-const socket = io("wss://bloom-backend-qi6q.onrender.com/socket.io/?EIO=4&transport=websocket&sid=stmQyWP6-P9l5hbrAAAB");
+const socket = io("https://bloom-backend-qi6q.onrender.com", {
+  withCredentials: true, // only if necessary, for sending cookies with requests
+  transports: ['websocket'] // optional, if you want to force Websockets
+});
 import { useUser } from '../../context/UserContext.jsx';
 import Footer from "../../components/Footer/Footer";
 
