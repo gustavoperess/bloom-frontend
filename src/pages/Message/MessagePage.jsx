@@ -8,7 +8,7 @@ import { getUserInformationById } from "../../services/users";
 import NavbarComponent from "../../components/Navbar/NavbarComponent";
 import { getAllMessagesByUserId } from "../../services/messages";
 import io from "socket.io-client";
-const socket = io("http://localhost:5001");
+const socket = io("https://bloom-backend-qi6q.onrender.com");
 import { useUser } from '../../context/UserContext.jsx';
 import Footer from "../../components/Footer/Footer";
 
