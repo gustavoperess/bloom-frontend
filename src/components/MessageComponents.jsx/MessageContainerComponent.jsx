@@ -3,7 +3,7 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
 import "./MessageComponents.css";
 import { getMessagesById, sendMessage } from "../../services/messages";
 import io from "socket.io-client";
-const socket = io("https://bloom-backend-qi6q.onrender.com");
+const socket = io("wss://bloom-backend-qi6q.onrender.com/socket.io/?EIO=4&transport=websocket&sid=stmQyWP6-P9l5hbrAAAB");
 
 function MessageContainer({ messageManager, userDetails, receiverDetails, newRecipientId, newUserName, myRoomIdentifier }) {
   const [messages, setMessages] = useState([]);
