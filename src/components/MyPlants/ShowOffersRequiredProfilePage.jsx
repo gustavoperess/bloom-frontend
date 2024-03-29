@@ -64,9 +64,10 @@ const RequiredOffersCard = ({ userOffers, userDetails }) => {
                     <Row xs={1} md={4} className="plantcard">
                         {userOffers?.slice(0, 4).reverse().map((item, index)=> (
                             <Card className='helpRequestCard' key={index}>
+                                      {userDetails?.user_id == userId || userDetails == userId ? 
                                 <Card.Header className="helpRequestHeader">
                                     <CloseButton onClick={() => confirmDelete(item.id)} />
-                                </Card.Header>
+                                </Card.Header> : ""}
                                 <Card.Img variant="top" src={item?.plant_photos[0] == "" ? "https://res.cloudinary.com/dououppib/image/upload/v1709825357/PLANTS/Cover_zohttr.png" : item?.plant_photos[0]} />
                                 <Card.Body className="helpRequestBody">
                                     <Card.Title className="helpRequestTitle">{item?.title}</Card.Title>
