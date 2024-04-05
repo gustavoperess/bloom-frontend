@@ -1,3 +1,10 @@
+<h1 align="center">
+  BLOOM
+</h1>
+
+Check the deployed version: 
+  [BLOOM](https://bloom-frontend-vryp.onrender.com/).
+
 # Bloom Frontend
 
 ## Setup
