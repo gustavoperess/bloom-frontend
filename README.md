@@ -27,7 +27,7 @@ This repo contains two applications:
 
 - A frontend React App.
 - A backend in flask.
-- A postgress database inside of the backend.
+- A postgress database configured on the backend.
 
 
 # Bloom Frontend setup
@@ -53,3 +53,52 @@ This repo contains two applications:
 ```
 
 # Bloom backend setup
+
+1. Clone the below repository. 
+
+```bash
+    git clone https://github.com/gustavoperess/bloom-backend
+```
+
+2. Follow the below instructions:
+
+```bash
+    # Navigate to your repository
+    cd bloom-backend
+    # Install dependencies and set up the virtual environment
+    pipenv install
+    # Activate the virtual environment
+    pipenv shell
+```
+
+3. Create a test and development database (This assumes you have postgres) . 
+
+```bash
+   createdb BLOOM
+   createdb BLOOM_test
+   In the BLOOM_test database, run the following SQL query: "CREATE USER postgres WITH SUPERUSER PASSWORD 'postgres';"
+```
+
+4. Seed the development database (ensure you have run `pipenv shell` first) . 
+
+```bash
+   python seed_dev_database.py
+```
+
+5. create .env file in main directory. 
+
+```bash
+   echo "JWT_SECRET_KEY='super-secret-key'" > .env
+```
+
+6. Run the tests (with extra logging). 
+
+```bash
+   pytest -sv
+```
+
+7. Run the server. 
+
+```bash
+   python app.py
+```
