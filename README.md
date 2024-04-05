@@ -2,6 +2,8 @@
   BLOOM
 </h1>
 
+A social media platform designed to address plant owner’s need for help in caring for their plants while away for an extended period of time.
+
 Check the deployed version: 
   [BLOOM](https://bloom-frontend-vryp.onrender.com/).
 
