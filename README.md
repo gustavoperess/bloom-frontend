@@ -9,12 +9,13 @@ Check the deployed version:
 
 ## Features
 
-- **Main page**: View requests for assistance and make monetary offers to help . 
+- **Home Page**: View requests for assistance and make monetary offers to help others. 
 - **Browse**: Explore users' profiles, review their requests for help, and see the plants they own. 
-- **Make a help request**: Need someone to care for your plants? No problem! Create a help request with a start and end date, along with the amount you're willing to pay.
-- **Live message chat**: Engage with other users in real-time through a live message chat powered by Socket.IO.
-- **Add Plants**: Enrich your collection by adding a plant from an external API featuring over 3,000 plant varieties.
-- **Manage your requests**: Track your requests, review offers received and made, and manage them by accepting, rejecting, or deleting existing requests.
+- **Create a request for help**: Need someone to care for your plants? No problem! Create a help request with a start and end date, along with the amount you're willing to pay.
+- **Submit a offer to help**: Review request details, make an offer, and send a static message with your bid.
+- **Live message chat**: Engage with other users in real-time through live chat messaging powered by Socket.IO.
+- **Add Plants**: Enrich your collection by adding a plant powered by an external API featuring over 3,000 plant varieties.
+- **Manage your requests**: (1) Manage your own requests by editing or deleting, (2) manage received requests by accepting, rejecting or initiating a live chat, and (3) review requests sent to others offering help or rescind offer.
 - **User information**: Update your personal information and enhance your profile with a photo.
 
 
