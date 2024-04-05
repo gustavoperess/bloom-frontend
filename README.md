@@ -21,26 +21,35 @@ Check the deployed version:
 
 # Bloom Frontend
 
-## Setup
+## Structure
 
-1. Clone the Repo
+This repo contains two applications:
 
-```bash
-git clone https://github.com/JonnySB/bloom-frontend.git
-```
+- A frontend React App.
+- A backend in flask.
+- A postgress database inside of the backend.
 
-3. Create backend .env file under the main project directory:
 
-```bash
-echo "VITE_BACKEND_URL='http://localhost:5001'" > .env
-```
+# Bloom Frontend setup
 
-2. Install the assocated packages and run the web app.
+1. Clone this repository. 
 
 ```bash
-cd bloom-frontend
-npm install
-npm run dev
+    git clone https://github.com/gustavoperess/bloom-backend
 ```
 
-NOTE. You must also have the [bloom-backend](https://github.com/JonnySB/bloom-backend) project running.
+2. Create a .env file under the main project directory to connect with your backend:
+
+```bash
+    echo "VITE_BACKEND_URL='http://localhost:5001'" > .env
+```
+
+3. Install the assocated packages and run the web app.
+
+```bash
+    cd bloom-frontend
+    npm install
+    npm run dev
+```
+
+# Bloom backend setup
