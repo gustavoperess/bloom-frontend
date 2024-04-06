@@ -38,7 +38,7 @@ This repo contains two applications:
 1. Clone this repository. 
 
 ```bash
-    git clone https://github.com/gustavoperess/bloom-backend
+    git clone https://github.com/gustavoperess/bloom-frontend
 ```
 
 2. Create a .env file under the main project directory to connect with your backend:
