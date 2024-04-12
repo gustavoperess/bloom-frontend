@@ -78,7 +78,7 @@ export const Login = () => {
                         </div> }
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Col sm="12"> 
-                                <Form.Control required type="text"  placeholder="Email or username" value={username_email} onChange={handleUsernameEmailChange} />
+                                <Form.Control required type="text"  placeholder="Email or Username" value={username_email} onChange={handleUsernameEmailChange} />
                             </Col>
                         </Form.Group>
     
