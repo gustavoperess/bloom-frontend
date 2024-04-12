@@ -66,6 +66,7 @@ export const Login = () => {
                     </button>
             </div>
             <Container className="d-flex align-items-center justify-content-center">
+    
                 <div className="login-container">
                     <Form className="Login d-flex flex-column align-items-center" onSubmit={handleSubmit}>
                         <h4 className="white-text">I already have an account</h4>
@@ -90,7 +91,15 @@ export const Login = () => {
                     </Form>
                   
                 </div>
+              
             </Container>
+            <div className="outside-exiting-account">
+            <div className="existing-account">
+                    <p>Use an existing account to test the features</p>
+                    <p>Username: tee-jay</p>
+                    <p>Password: Password123!</p>
+            </div>
+            </div>
         </div>
     </>
 

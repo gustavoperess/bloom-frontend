@@ -84,3 +84,20 @@
 .wrongCredentials p {
   font-weight: 500;
 }
+
+.outside-exiting-account{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.existing-account {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #ffebe8;
+  border: 1px solid #dd3c10;
+  font-weight: 700;
+  max-width: 500px;;
+  text-align: left;
+}
