@@ -20,14 +20,6 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Check if staticwebapp.config.json is present
-        run: |
-          ls dist/  # List files in dist to check if staticwebapp.config.json is there
-          
-      - name: Check staticwebapp.config.json content
-        run: |
-          cat dist/staticwebapp.config.json  # Print the contents to the logs
-
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
