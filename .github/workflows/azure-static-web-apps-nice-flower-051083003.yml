@@ -19,10 +19,14 @@ jobs:
         with:
           submodules: true
           lfs: false
-        
-      - name: Copy staticwebapp.config.json
+
+      - name: Check if staticwebapp.config.json is present
         run: |
-          cp staticwebapp.config.json dist/  # Ensure staticwebapp.config.json is copied to the output directory
+          ls dist/  # List files in dist to check if staticwebapp.config.json is there
+          
+      - name: Check staticwebapp.config.json content
+        run: |
+          cat dist/staticwebapp.config.json  # Print the contents to the logs
 
       - name: Build And Deploy
         id: builddeploy
