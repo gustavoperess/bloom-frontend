@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://bloom-backend-e9c5c8c6ducehthh.uksouth-01.azurewebsites.net', // Proxy /api requests to your Flask backend
+      '/api': 'https://bloom-eef9h8gjc9dadbf0.ukwest-01.azurewebsites.net', // Proxy /api requests to your Flask backendl
     },
   }
 });
